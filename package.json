@@ -1,6 +1,6 @@
 {
-  "name": "vueless",
-  "version": "0.1.0",
+  "name": "@projectrebel/vueless",
+  "version": "0.0.1",
   "private": false,
   "author": "Nolan Nordlund <nolan@projectrebel.io> (http://projectrebel.io)",
   "license": "MIT",
