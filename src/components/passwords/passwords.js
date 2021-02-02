@@ -29,6 +29,8 @@ export function calculateComplexity(value) {
 }
 
 export let PasswordComplexity = defineComponent({
+  name: 'PasswordComplexity',
+  
   props: {
     password: {
       type: String,

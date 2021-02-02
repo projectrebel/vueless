@@ -12,6 +12,10 @@
   "bugs": {
     "url": "https://github.com/projectrebel/vueless/issues"
   },
+  "files": [
+    "src"
+  ],
+  "main": "src/index.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
