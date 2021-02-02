@@ -5,6 +5,13 @@
   "author": "Nolan Nordlund <nolan@projectrebel.io> (http://projectrebel.io)",
   "license": "MIT",
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/projectrebel/vueless.git"
+  },
+  "bugs": {
+    "url": "https://github.com/projectrebel/vueless/issues"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -50,5 +57,14 @@
         }
       ]
     ]
-  }
+  },
+  "keywords": [
+    "vue",
+    "vuejs",
+    "vue 3",
+    "renderless",
+    "renderless components",
+    "component library",
+    "renderless component library"
+  ]
 }
