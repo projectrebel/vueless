@@ -1,5 +1,5 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <img alt="Vue logo" src="./assets/vueless-logo.png" />
 
   <password-complexity
     :password="input.password"

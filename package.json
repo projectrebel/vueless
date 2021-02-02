@@ -4,7 +4,7 @@
   "private": false,
   "author": "Nolan Nordlund <nolan@projectrebel.io> (http://projectrebel.io)",
   "license": "MIT",
-  "description": "",
+  "description": "A renderless component library for Vue 3",
   "repository": {
     "type": "git",
     "url": "https://github.com/projectrebel/vueless.git"
