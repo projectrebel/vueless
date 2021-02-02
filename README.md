@@ -9,6 +9,17 @@ Install!
 
     npm install @projectrebel/vueless
 
+    import Vueless from '@projectrebel/vueless';
+    Vue.use(Vueless);
+
+or
+
+    import { PasswordComplexity } from '@projectrebel/vueless';
+    ...
+    components: {
+        PasswordComplexity
+    }
+
 ## License
 
 Vueless is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

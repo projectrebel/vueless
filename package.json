@@ -1,6 +1,6 @@
 {
   "name": "@projectrebel/vueless",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "author": "Nolan Nordlund <nolan@projectrebel.io> (http://projectrebel.io)",
   "license": "MIT",
@@ -12,6 +12,10 @@
   "bugs": {
     "url": "https://github.com/projectrebel/vueless/issues"
   },
+  "files": [
+    "src"
+  ],
+  "main": "src/index.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
