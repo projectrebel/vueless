@@ -39,4 +39,13 @@ describe("TagInput", () => {
       expect(wrapper.html()).not.toContain('tag1');
       expect(wrapper.html()).not.toContain('tag2');
     });
+
+    it("adds tags when pressing enter", async () => {
+      const wrapper = mount(TagInputExample);
+
+      wrapper.find('input').setValue('new tag');
+      wrapper.find('input').trigger('keydown.enter');
+      await wrapper.vm.$forceUpdate();
+      expect(wrapper.html()).toContain('new tag');
+    });
 });
