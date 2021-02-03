@@ -1,8 +1,4 @@
-import { defineComponent, defineEmit } from "vue";
-
-export function removeTag(tag) {
-  return;
-}
+import { defineComponent } from "vue";
 
 export let TagInput = defineComponent({
   name: "TagInput",
