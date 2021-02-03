@@ -19,4 +19,24 @@ describe("TagInput", () => {
       expect(wrapper.html()).toContain('tag1');
       expect(wrapper.html()).toContain('tag2');
     });
+
+    it("removes tags with click the remove button", async () => {
+      const wrapper = mount(TagInputExample, {
+        data() {
+          return {
+            tags: ['tag1', 'tag2']
+          }
+        }
+      });
+
+      await wrapper.find('button').trigger('click');
+      await wrapper.vm.$forceUpdate();
+      expect(wrapper.html()).not.toContain('tag1');
+      expect(wrapper.html()).toContain('tag2');
+
+      await wrapper.find('button').trigger('click');
+      await wrapper.vm.$forceUpdate();
+      expect(wrapper.html()).not.toContain('tag1');
+      expect(wrapper.html()).not.toContain('tag2');
+    });
 });
