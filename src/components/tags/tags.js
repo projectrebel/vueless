@@ -14,10 +14,10 @@ export let TagInput = defineComponent({
   setup(props, context) {
     const newTag = ref('');
 
-    function addTag(tag) {
+    function addTag() {
       context.emit(
         "input",
-        [...props.modelValue, tag]
+        [...props.modelValue, newTag.value]
       );
     }
 
@@ -34,7 +34,7 @@ export let TagInput = defineComponent({
 
     function keydown(event) {
       if (event.keyCode === 13) {
-        addTag(newTag.value);
+        addTag();
       }
     }
 

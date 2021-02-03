@@ -44,8 +44,15 @@ describe("TagInput", () => {
       const wrapper = mount(TagInputExample);
 
       wrapper.find('input').setValue('new tag');
-      wrapper.find('input').trigger('keydown.enter');
-      await wrapper.vm.$forceUpdate();
+      await wrapper.find('input').trigger('keydown.enter');
+      expect(wrapper.html()).toContain('new tag');
+    });
+
+    it("adds tags when clicking the submit button", async () => {
+      const wrapper = mount(TagInputExample);
+
+      wrapper.find('input').setValue('new tag');
+      await wrapper.find('button[type=submit]').trigger('click');
       expect(wrapper.html()).toContain('new tag');
     });
 });

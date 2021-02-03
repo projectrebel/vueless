@@ -7,6 +7,7 @@
             </span>
         </span>
         <input class="tags-input-text" placeholder="Add tag..." @input="slot.inputEvents.input" @keydown.enter="slot.inputEvents.keydown" />
+        <button type="submit" @click="slot.addTag()">Add</button>
     </tag-input>
 </template>
 
