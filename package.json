@@ -20,7 +20,9 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "test": "jest"
+    "test": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "vue": "^3.0.5"
@@ -28,13 +30,19 @@
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
-    "@vue/test-utils": "^2.0.0-rc.0",
-    "babel-jest": "^26.6.3",
-    "jest": "^26.6.3",
+    "@storybook/addon-actions": "^6.2.0-alpha.20",
+    "@storybook/addon-essentials": "^6.2.0-alpha.20",
+    "@storybook/addon-links": "^6.2.0-alpha.20",
+    "@storybook/vue3": "^6.2.0-alpha.20",
     "@vitejs/plugin-vue": "^1.1.2",
     "@vue/compiler-sfc": "^3.0.5",
+    "@vue/test-utils": "^2.0.0-rc.0",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.2",
+    "jest": "^26.6.3",
+    "vite": "^2.0.0-beta.50",
     "vue-jest": "^5.0.0-alpha.8",
-    "vite": "^2.0.0-beta.50"
+    "vue-loader": "^16.1.2"
   },
   "jest": {
     "testRegex": "src/.*.test.js$",
