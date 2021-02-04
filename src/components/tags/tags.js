@@ -49,7 +49,7 @@ export let TagInput = defineComponent({
         tags: props.modelValue,
         addTag,
         removeTag: removeTag,
-        inputAttributes: { modelValue: newTag.value },
+        inputAttributes: { value: newTag.value },
         inputEvents: { input, keydown }
       });
   },

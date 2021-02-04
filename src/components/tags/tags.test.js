@@ -106,12 +106,12 @@ describe("TagInput", () => {
       expect(wrapper.find('ul').html()).toBe('<ul class="tags-input-tag"><li>tag1 <button type="button" class="tags-input-remove">×</button></li></ul>');
     });
 
-    // it("resets newTag after a valid tag is added", async () => {
-    //   const wrapper = mount(TagInputExample);
+    it("resets newTag after a valid tag is added", async () => {
+      const wrapper = mount(TagInputExample);
 
-    //   wrapper.find('input').setValue('new tag');
-    //   await wrapper.find('input').trigger('keydown.enter');
-    //   await wrapper.vm.$forceUpdate();
-    //   expect(wrapper.find('input').element.value).toBe('');
-    // });
+      wrapper.find('input').setValue('new tag');
+      await wrapper.find('input').trigger('keydown.enter');
+      await wrapper.vm.$forceUpdate();
+      expect(wrapper.find('input').element.value).toBe('');
+    });
 });
