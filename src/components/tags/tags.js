@@ -15,10 +15,16 @@ export let TagInput = defineComponent({
     const newTag = ref('');
 
     function addTag() {
+      let newTagTrimmed = newTag.value.trim();
+      if (newTagTrimmed.length == 0 || props.modelValue.find(t => t === newTagTrimmed)) {
+        return false;
+      }
+
       context.emit(
         "input",
-        [...props.modelValue, newTag.value]
+        [...props.modelValue, newTagTrimmed]
       );
+      newTag.value = '';
     }
 
     function removeTag(tag) {
@@ -38,11 +44,12 @@ export let TagInput = defineComponent({
       }
     }
 
-    return () =>
+    return () => 
       context.slots.default({
         tags: props.modelValue,
         addTag,
         removeTag: removeTag,
+        inputAttributes: { modelValue: newTag.value },
         inputEvents: { input, keydown }
       });
   },

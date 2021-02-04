@@ -55,4 +55,63 @@ describe("TagInput", () => {
       await wrapper.find('button[type=submit]').trigger('click');
       expect(wrapper.html()).toContain('new tag');
     });
+
+    it("does not allow adding an existing tag", async () => {
+      const wrapper = mount(TagInputExample, {
+        data() {
+          return {
+            tags: ['tag1']
+          }
+        }
+      });
+
+      wrapper.find('input').setValue('tag1');
+      await wrapper.find('input').trigger('keydown.enter');
+      await wrapper.vm.$forceUpdate();
+      expect(wrapper.find('ul').html()).toBe('<ul class="tags-input-tag"><li>tag1 <button type="button" class="tags-input-remove">×</button></li></ul>');
+
+      wrapper.find('input').setValue('tag2');
+      await wrapper.find('input').trigger('keydown.enter');
+      await wrapper.vm.$forceUpdate();
+      expect(wrapper.find('ul').html()).toBe('<ul class="tags-input-tag"><li>tag1 <button type="button" class="tags-input-remove">×</button></li><li>tag2 <button type="button" class="tags-input-remove">×</button></li></ul>');
+    });
+
+    it("trims whitespace when adding tags", async () => {
+      const wrapper = mount(TagInputExample, {
+        data() {
+          return {
+            tags: ['tag1']
+          }
+        }
+      });
+
+      wrapper.find('input').setValue('  tag1  ');
+      await wrapper.find('input').trigger('keydown.enter');
+      await wrapper.vm.$forceUpdate();
+      expect(wrapper.find('ul').html()).toBe('<ul class="tags-input-tag"><li>tag1 <button type="button" class="tags-input-remove">×</button></li></ul>');
+    });
+
+    it("does not allow empty strings", async () => {
+      const wrapper = mount(TagInputExample, {
+        data() {
+          return {
+            tags: ['tag1']
+          }
+        }
+      });
+
+      wrapper.find('input').setValue('    ');
+      await wrapper.find('input').trigger('keydown.enter');
+      await wrapper.vm.$forceUpdate();
+      expect(wrapper.find('ul').html()).toBe('<ul class="tags-input-tag"><li>tag1 <button type="button" class="tags-input-remove">×</button></li></ul>');
+    });
+
+    // it("resets newTag after a valid tag is added", async () => {
+    //   const wrapper = mount(TagInputExample);
+
+    //   wrapper.find('input').setValue('new tag');
+    //   await wrapper.find('input').trigger('keydown.enter');
+    //   await wrapper.vm.$forceUpdate();
+    //   expect(wrapper.find('input').element.value).toBe('');
+    // });
 });
