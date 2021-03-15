@@ -1,29 +1,25 @@
-# less
+![image](src/assets/vueless-logo.png)
 
-## Project setup
-```
-yarn install
-```
+## A renderless component library for Vue 3
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+Intro!
 
-### Compiles and minifies for production
-```
-yarn build
-```
+## Installation
+Install!
 
-### Run your unit tests
-```
-yarn test:unit
-```
+    npm install @projectrebel/vueless
 
-### Lints and fixes files
-```
-yarn lint
-```
+    import Vueless from '@projectrebel/vueless';
+    Vue.use(Vueless);
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+or
+
+    import { PasswordComplexity } from '@projectrebel/vueless';
+    ...
+    components: {
+        PasswordComplexity
+    }
+
+## License
+
+Vueless is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
