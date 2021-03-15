@@ -1,17 +1,82 @@
 {
-  "name": "vueless",
-  "version": "0.0.0",
+  "name": "@projectrebel/vueless",
+  "version": "0.0.3",
+  "private": false,
+  "author": "Nolan Nordlund <nolan@projectrebel.io> (http://projectrebel.io)",
+  "license": "MIT",
+  "description": "A renderless component library for Vue 3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/projectrebel/vueless.git"
+  },
+  "bugs": {
+    "url": "https://github.com/projectrebel/vueless/issues"
+  },
+  "files": [
+    "src"
+  ],
+  "main": "src/index.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "test": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "vue": "^3.0.5"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@storybook/addon-actions": "^6.2.0-alpha.20",
+    "@storybook/addon-essentials": "^6.2.0-alpha.20",
+    "@storybook/addon-links": "^6.2.0-alpha.20",
+    "@storybook/vue3": "^6.2.0-alpha.20",
     "@vitejs/plugin-vue": "^1.1.2",
     "@vue/compiler-sfc": "^3.0.5",
-    "vite": "^2.0.0-beta.50"
-  }
+    "@vue/test-utils": "^2.0.0-rc.0",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.2",
+    "jest": "^26.6.3",
+    "vite": "^2.0.0-beta.50",
+    "vue-jest": "^5.0.0-alpha.8",
+    "vue-loader": "^16.1.2"
+  },
+  "jest": {
+    "testRegex": "src/.*.test.js$",
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/resources/js/$1"
+    },
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.vue$": "<rootDir>/node_modules/vue-jest"
+    }
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  },
+  "keywords": [
+    "vue",
+    "vuejs",
+    "vue 3",
+    "renderless",
+    "renderless components",
+    "component library",
+    "renderless component library"
+  ]
 }
