@@ -1,8 +1,10 @@
 import * as Vueless from './index.js';
 
-it('should expose the correct components', () => {
+it('should expose the correct items', () => {
   expect(Object.keys(Vueless)).toEqual([
-    'default', // This is the plugin installer
+    'TagInput',
     'PasswordComplexity',
+    'useBooleanState',
+    'default', // This is the plugin installer
   ]);
 });

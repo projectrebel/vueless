@@ -1,6 +1,8 @@
+import { TagInput } from "./components/tags/tags.js";
 import { PasswordComplexity } from "./components/passwords/passwords.js";
 
 const components = {
+  TagInput,
   PasswordComplexity,
 };
 
@@ -11,4 +13,8 @@ function install(app, options) {
 }
 
 export default { install };
+export { TagInput } from "./components/tags/tags.js";
 export { PasswordComplexity } from "./components/passwords/passwords.js";
+
+
+export { useBooleanState } from './composables/state/useBooleanState';
