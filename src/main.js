@@ -1,14 +1,11 @@
-// import { createApp } from 'vue';
-import * as components from "./components";
+import * as components from "./components/index.js";
 
-const Vueless = {
-  install(app, options = {}) {
-    Object.keys(components).forEach((component) => {
-      app.component(component.name, component);
-    });
+const install = (instance) => {
+  for (let componentKey in components) {
+      instance.use((components)[componentKey])
+  }
+}
 
-    app.provide("vueless", options);
-  },
-};
+export default install
 
-export default Vueless;
+export * from './components'
